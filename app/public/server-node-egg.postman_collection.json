@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "dbae6c8a-b28a-4a11-aab4-ab74ed946b3c",
+		"name": "server-node-egg",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "mail",
+							"value": "2232024021@qq.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:7001/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "账号注册"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/login/account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "e10adc3949ba59abbe56e057f20f883e",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:7001/api/login/account",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"login",
+						"account"
+					]
+				},
+				"description": "账号密码登录"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:7001/api/logout/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"logout",
+						"1"
+					]
+				},
+				"description": "退出登录"
+			},
+			"response": []
+		}
+	]
+}
