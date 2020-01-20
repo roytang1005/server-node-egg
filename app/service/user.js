@@ -65,7 +65,7 @@ class UserService extends Service {
     const { ctx } = this;
     // 是否是当前登录的用户
     if (ctx.session.user && `${ctx.session.user.id}` === id) {
-      ctx.session.user = null;
+      ctx.session = null;
       return {
         status: 'ok'
       };
