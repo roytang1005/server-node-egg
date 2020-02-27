@@ -1,6 +1,6 @@
 exports.sequelize = {
   dialect: 'mysql',
-  database: 'Lu_development',
+  database: 'database_development',
   password: 'TryaWcj1314',
   host: '127.0.0.1',
   port: 3306

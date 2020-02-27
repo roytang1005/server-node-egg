@@ -1,7 +1,7 @@
 {
   "name": "server-node-egg",
   "version": "1.0.0",
-  "description": "使用 Egg 实现注册、登录和退出的账户功能",
+  "description": "使用 Egg.js 开发服务端功能",
   "private": true,
   "egg": {
     "declarations": true
@@ -12,7 +12,8 @@
     "egg-scripts": "^2.11.0",
     "egg-sequelize": "^5.2.1",
     "egg-validate": "^2.0.2",
-    "mysql2": "^2.1.0"
+    "mysql2": "^2.1.0",
+    "nodemailer": "^6.4.2"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -45,7 +46,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:roytang1005/server-node-egg.git"
   },
   "author": "Roy Tang",
   "license": "MIT"

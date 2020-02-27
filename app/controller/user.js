@@ -3,7 +3,9 @@
 const Controller = require('egg').Controller;
 
 class UserController extends Controller {
-  // 注册用户
+  /**
+   * 注册用户
+   */
   async register() {
     const { ctx, service } = this;
     const req = ctx.request.body;
@@ -11,12 +13,21 @@ class UserController extends Controller {
     const rules = {
       username: { type: 'string', trim: true },
       password: { type: 'string', trim: true },
-      mail: { type: 'email', required: false }
+      email: { type: 'email' },
+      all_emails: { type: 'boolean', required: false, default: true }
     };
     // 校验参数
     ctx.validate(rules, req);
-    const res = await service.user.register(req);
-    ctx.body = res;
+    // 密码强度校验
+    if (ctx.helper.validatePassword(req.password)) {
+      const res = await service.user.register(req);
+      ctx.body = res;
+    } else {
+      ctx.body = {
+        status: 'error',
+        message: '密码强度有误'
+      };
+    }
     ctx.status = 200;
   }
 
@@ -40,6 +51,16 @@ class UserController extends Controller {
     const { ctx, service } = this;
     const { id } = ctx.params;
     const res = await service.user.logout(id);
+    ctx.body = res;
+    ctx.status = 200;
+  }
+  
+  // 发送账户验证邮件
+  async requestVerification() {
+    const { ctx, service } = this;
+    const { username, id } = ctx.params;
+    console.log(ctx.params);
+    const res = await service.user.requestVerification({ username, id });
     ctx.body = res;
     ctx.status = 200;
   }
