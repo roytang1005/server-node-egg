@@ -39,6 +39,6 @@ The GitHub Team
   // true for 465, false for other ports
   secure: true,
   user: '17326180619@163.com',
-  pass: '1005TryaWcj1314',
+  pass: '123456',
   validateEmail: user => createValidateEmail(user)
 };
